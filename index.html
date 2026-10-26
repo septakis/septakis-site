@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="canonical" href="https://septakis.io/">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22%3E%3Cstyle%3E.b%7Bfill:%231F1D1A%7D.c%7Bfill:%231E7A5A%7D%40media (prefers-color-scheme:dark)%7B.b%7Bfill:%23EDE8E0%7D.c%7Bfill:%235FCB9C%7D%7D%3C/style%3E%3Cmask id=%22g%22 maskUnits=%22userSpaceOnUse%22 x=%220%22 y=%220%22 width=%2264%22 height=%2264%22%3E%3Crect width=%2264%22 height=%2264%22 fill=%22%23fff%22/%3E%3Cpath d=%22M32.00 5.00L54.67 15.92Q55.65 26.26 46.98 34.75L41.93 22.75Q40.69 10.69 32.00 5.00Z M54.67 15.92L60.27 40.45Q52.79 47.66 40.76 46.18L46.98 34.75Q55.65 26.26 54.67 15.92Z M60.27 40.45L44.58 60.13Q34.28 58.77 27.94 48.44L40.76 46.18Q52.79 47.66 60.27 40.45Z M44.58 60.13L19.42 60.13Q14.05 51.23 18.18 39.83L27.94 48.44Q34.28 58.77 44.58 60.13Z M19.42 60.13L3.73 40.45Q7.34 30.71 18.83 26.83L18.18 39.83Q14.05 51.23 19.42 60.13Z M3.73 40.45L9.33 15.92Q19.19 12.67 29.40 19.23L18.83 26.83Q7.34 30.71 3.73 40.45Z M9.33 15.92L32.00 5.00Q40.69 10.69 41.93 22.75L29.40 19.23Q19.19 12.67 9.33 15.92Z%22 fill=%22none%22 stroke=%22%23000%22 stroke-width=%223.6%22 stroke-linejoin=%22round%22/%3E%3C/mask%3E%3Cpath class=%22b%22 d=%22M32.00 5.00L54.67 15.92Q55.65 26.26 46.98 34.75L41.93 22.75Q40.69 10.69 32.00 5.00Z M54.67 15.92L60.27 40.45Q52.79 47.66 40.76 46.18L46.98 34.75Q55.65 26.26 54.67 15.92Z M60.27 40.45L44.58 60.13Q34.28 58.77 27.94 48.44L40.76 46.18Q52.79 47.66 60.27 40.45Z M44.58 60.13L19.42 60.13Q14.05 51.23 18.18 39.83L27.94 48.44Q34.28 58.77 44.58 60.13Z M19.42 60.13L3.73 40.45Q7.34 30.71 18.83 26.83L18.18 39.83Q14.05 51.23 19.42 60.13Z M3.73 40.45L9.33 15.92Q19.19 12.67 29.40 19.23L18.83 26.83Q7.34 30.71 3.73 40.45Z M9.33 15.92L32.00 5.00Q40.69 10.69 41.93 22.75L29.40 19.23Q19.19 12.67 9.33 15.92Z%22 mask=%22url(%23g)%22/%3E%3Cpath class=%22c%22 d=%22M39.28 25.75L42.99 34.55L38.42 42.93L29.02 44.59L21.86 38.27L22.34 28.74L30.09 23.17Z%22/%3E%3C/svg%3E" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<title>Septakis</title>
+<meta name="description" content="Septakis makes vexproof, a tool that runs in your own CI and proves which vulnerable npm code never shipped.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Lexend+Zetta:wght@700&display=swap" rel="stylesheet">
+<style>
+  /* Layout: one left-aligned column of plain statements beside one large object, the mark. Seven blades, seven principles. */
+  :root{
+    --bg:#FAF8F4; --panel:#FFFFFF; --ink:#1F1D1A; --ink-2:#4F4B46; --ink-3:#716B63;
+    --rule:#E8E3DB; --rule-2:#D3CCC1; --accent:#1E7A5A; --accent-bg:#E4F2EA; --btn-ink:#FFFFFF;
+    --pk0:#1F1D1A; --pk1:#232C24; --pk2:#263A2E; --pk3:#274939; --pk4:#265944; --pk5:#23694F; --pk6:#1E7A5A;
+    --term:#26231F; --term-text:#E8E3DB; --term-dim:#A39D93; --term-ok:#6FD3A6; --term-warn:#F0B35A;
+    --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+    --r:8px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#171512; --panel:#1F1C18; --ink:#EDE8E0; --ink-2:#BDB6AB; --ink-3:#9A9388;
+      --rule:#2C2823; --rule-2:#3D3831; --accent:#5FCB9C; --accent-bg:#17302A; --btn-ink:#171512;
+      --pk0:#EDE8E0; --pk1:#D8E3D5; --pk2:#C3DFC9; --pk3:#ADDABE; --pk4:#95D5B3; --pk5:#7BD0A7; --pk6:#5FCB9C;
+      --term:#100F0D;
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+      --bg:#171512; --panel:#1F1C18; --ink:#EDE8E0; --ink-2:#BDB6AB; --ink-3:#9A9388;
+      --rule:#2C2823; --rule-2:#3D3831; --accent:#5FCB9C; --accent-bg:#17302A; --btn-ink:#171512;
+      --pk0:#EDE8E0; --pk1:#D8E3D5; --pk2:#C3DFC9; --pk3:#ADDABE; --pk4:#95D5B3; --pk5:#7BD0A7; --pk6:#5FCB9C;
+      --term:#100F0D;
+      color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:var(--ink);text-decoration-color:var(--rule-2);text-decoration-thickness:1px;text-underline-offset:3px}
+  a:hover{text-decoration-color:var(--ink)}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+  p{margin:0}
+  [id]{scroll-margin-top:84px}
+  .wrap{max-width:68rem;margin:0 auto;padding-inline:24px}
+  code{font-family:var(--mono);font-size:.86em}
+
+  header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+  header.top .wrap{display:flex;align-items:center;gap:20px;height:60px}
+  .brand{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:1.12rem;letter-spacing:-.02em;text-decoration:none}
+  .wm{font-family:"Lexend Zetta",var(--sans);font-weight:700;letter-spacing:-.02em;text-transform:uppercase} .brand .wm{font-size:.84rem} .by .wm{font-size:.66rem;margin-left:.3em} .maker .wm{font-size:.72em}
+  .brand .pk{width:30px;height:30px}
+  header nav{margin-left:auto;display:flex;gap:22px}
+  header nav a{font-size:.9rem;color:var(--ink-2);text-decoration:none}
+  header nav a:hover{color:var(--ink)}
+
+  .hero{position:relative;overflow:hidden;padding-block:88px 72px;border-bottom:1px solid var(--rule)}
+  .hero .wrap>div:first-child{position:relative;z-index:1}
+  .hero .wrap{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:56px;align-items:center}
+  h1{font-size:clamp(2.2rem,4.9vw,3.7rem);line-height:1.05;letter-spacing:-.035em;font-weight:600;margin:0 0 24px;text-wrap:balance}
+  h1 em{display:block;font-style:normal;color:var(--accent);white-space:nowrap}
+  .lead{font-size:1.14rem;color:var(--ink-2);max-width:52ch}
+  .ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+  .btn{display:inline-flex;align-items:center;background:var(--ink);color:var(--btn-ink);font-size:.94rem;font-weight:500;padding:11px 20px;border-radius:999px;text-decoration:none;border:1px solid var(--ink)}
+  .btn:hover{opacity:.88}
+  .btn.ghost{background:transparent;color:var(--ink);border-color:var(--rule-2)}
+  .btn.ghost:hover{border-color:var(--ink);opacity:1}
+  /* Hero: the mark turns slowly and constantly; five dim copies spin past behind it at different depths (nearer ones are larger, faster and softer). The pointer shifts each layer by its depth (--mx, --my). */
+  .hero{--mx:0;--my:0}
+  .hero .wrap{position:relative;z-index:1}
+  .hero-bg{position:absolute;inset:0;z-index:0;pointer-events:none;color:var(--ink)}
+  .hero-bg .c{position:absolute;left:0;top:var(--y);width:var(--s);height:var(--s);opacity:var(--o);filter:blur(var(--b));transform:translate3d(var(--x),0,0);translate:calc(var(--mx)*var(--k)*1px) calc(var(--my)*var(--k)*1px);will-change:transform}
+  .hero-bg svg{display:block;width:100%;height:100%;transform-origin:50% 53.1%}
+  .hero-bg .c1{--s:clamp(84px,9vw,128px);--y:9%;--x:7vw;--o:.13;--b:0px;--k:-5;--t:104s;--d:-22s;--r:62s}
+  .hero-bg .c2{--s:clamp(130px,15vw,220px);--y:57%;--x:58vw;--o:.10;--b:1px;--k:-10;--t:80s;--d:-52s;--r:46s}
+  .hero-bg .c3{--s:clamp(200px,26vw,380px);--y:-14%;--x:30vw;--o:.07;--b:2.5px;--k:-17;--t:60s;--d:-13s;--r:74s}
+  .hero-bg .c4{--s:clamp(300px,40vw,600px);--y:28%;--x:66vw;--o:.05;--b:5px;--k:-28;--t:46s;--d:-31s;--r:92s}
+  .hero-bg .c5{--s:clamp(64px,7vw,100px);--y:76%;--x:43vw;--o:.14;--b:.5px;--k:-3;--t:128s;--d:-75s;--r:40s}
+  .hero-art{min-width:0}
+  .hero-mark{display:block;width:100%;max-width:400px;height:auto;margin-inline:auto;overflow:visible}
+  .hero-mark .blades{transform:translate(calc(var(--mx)*.9px),calc(var(--my)*.9px))}
+  .hero-mark .core{transform:translate(calc(var(--mx)*2.1px),calc(var(--my)*2.1px))}
+  .hero-mark .turn{transform-origin:32px 34px}
+  @media (prefers-reduced-motion:no-preference){
+    .hero-mark .f{animation:step .6s both ease-out}
+    .hero-mark .f0{animation-delay:.15s} .hero-mark .f1{animation-delay:.27s} .hero-mark .f2{animation-delay:.39s} .hero-mark .f3{animation-delay:.51s} .hero-mark .f4{animation-delay:.63s} .hero-mark .f5{animation-delay:.75s} .hero-mark .f6{animation-delay:.87s} .hero-mark .f7{animation-delay:1.07s}
+    @keyframes step{from{fill:var(--rule-2)}}
+    .hero-mark .blades .turn{animation:spin 90s linear infinite}
+    .hero-mark .core .turn{animation:spin 54s linear infinite reverse}
+    .hero-bg .c{animation:pass var(--t) linear var(--d) infinite}
+    .hero-bg svg{animation:spin var(--r) linear infinite}
+    .hero-bg .c2 svg,.hero-bg .c4 svg{animation-direction:reverse}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes pass{from{transform:translate3d(calc(var(--s)*-1.15),0,0)}to{transform:translate3d(104vw,0,0)}}
+  }
+
+  section.band{padding-block:76px;border-bottom:1px solid var(--rule)}
+  .band .wrap{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:40px}
+  .label{font-size:.82rem;font-weight:500;color:var(--ink-3);padding-top:.5rem}
+  h2{font-size:clamp(1.5rem,2.6vw,2rem);line-height:1.2;letter-spacing:-.02em;font-weight:600;margin:0 0 14px;text-wrap:balance}
+  .body{min-width:0}
+  .body>p{max-width:64ch;color:var(--ink-2)}
+  .body>p+p{margin-top:14px}
+  .contact{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 28px;margin:24px 0 0}
+  .contact div{border-top:1px solid var(--rule);padding-top:14px;min-width:0}
+  .contact dt{font-size:.82rem;font-weight:500;color:var(--ink-3)}
+  .contact dd{margin:4px 0 0;font-size:.98rem;color:var(--ink-2);overflow-wrap:anywhere}
+
+  .tool{margin-top:28px;border:1px solid var(--rule);border-radius:var(--r);background:var(--panel);overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}
+  .tool-info{padding:28px;display:flex;flex-direction:column;gap:14px;min-width:0}
+  .tool-name{display:flex;align-items:center;gap:10px;font-size:1.3rem;font-weight:600;letter-spacing:-.02em}
+  .tool-name svg{width:24px;height:24px;color:var(--ink)}
+  .tool-info p{color:var(--ink-2);font-size:.96rem}
+  .facts{margin:4px 0 0;padding:0;list-style:none;display:grid;gap:0;border-top:1px solid var(--rule)}
+  .facts li{display:flex;gap:14px;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--rule);font-size:.9rem;color:var(--ink-2)}
+  .facts b{font-weight:600;color:var(--ink);min-width:4.6rem;font-variant-numeric:tabular-nums}
+  .tool-info .ctas{margin-top:6px}
+  .term{background:var(--term);color:var(--term-text);font-family:var(--mono);font-size:.76rem;line-height:1.7;padding:22px 22px;overflow-x:auto;min-width:0;display:flex;flex-direction:column;justify-content:center}
+  .term div{white-space:pre}
+  .term .dim{color:var(--term-dim)} .term .ok{color:var(--term-ok)} .term .warn{color:var(--term-warn)} .term .cmd{color:#fff}
+  .next{margin-top:18px;font-size:.94rem;color:var(--ink-3)}
+
+  .five{list-style:none;margin:26px 0 0;padding:0;border-top:1px solid var(--rule)}
+  .five li{display:grid;grid-template-columns:44px minmax(0,1fr) 270px;gap:20px 24px;align-items:center;padding:22px 0;border-bottom:1px solid var(--rule)}
+  .five li>.glyph{align-self:start}
+  .glyph{width:44px;height:44px}
+  .five h3{margin:0 0 4px;font-size:1.06rem;font-weight:600;letter-spacing:-.01em}
+  .five p{color:var(--ink-2);font-size:.97rem;max-width:62ch}
+
+  /* Principle figures. Drawn finished; the animations only delay parts, and run only when motion is welcome. */
+  .pfig{margin:0;width:270px;max-width:100%;background:var(--panel);border:1px solid var(--rule);border-radius:var(--r);overflow:hidden}
+  .pfig svg{display:block;width:100%;height:auto}
+  .pfig .zone{fill:var(--bg);stroke:var(--rule-2)}
+  .pfig .bx{fill:var(--panel);stroke:var(--rule-2)}
+  .pfig .bx.ghost{fill:var(--panel);stroke-dasharray:3 3}
+  .pfig .ln{fill:none;stroke:var(--rule-2);stroke-width:1.3}
+  .pfig .ln.dash{stroke-dasharray:3 3}
+  .pfig .no{fill:none;stroke:var(--ink-3);stroke-width:1.4;stroke-linecap:round}
+  .pfig .tick{fill:none;stroke:var(--accent);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .pfig .dot{fill:var(--accent)}
+  .pfig .ln.draw{stroke-dasharray:1 1}
+  .pfig .mark{fill:var(--accent)}
+  .pfig .orbit{fill:none;stroke:var(--rule-2);stroke-dasharray:2 3}
+  .pfig .node{fill:var(--panel);stroke:var(--rule-2);stroke-width:1.2}
+  .pfig .node.on{fill:var(--accent-bg);stroke:var(--accent)}
+  .pfig .node.lit{fill:var(--accent);stroke:var(--accent)}
+  .pfig .mute{fill:var(--ink-3)}
+  .pfig .person{fill:none;stroke:var(--ink-3);stroke-width:1.6;stroke-linecap:round}
+  .pfig .person.on{stroke:var(--accent)}
+  .pfig .ripple{fill:none;stroke:var(--accent);stroke-width:1.2}
+  .pfig .scan{stroke:var(--accent);stroke-width:1.4}
+  .pfig .still{display:none}
+  .pfig .slab{fill:var(--panel);stroke:var(--rule-2);stroke-width:1.2;stroke-linejoin:round}
+  .pfig .slab.on{fill:var(--accent-bg);stroke:var(--accent)}
+  .pfig .ln.beam{stroke:var(--accent);stroke-width:1.8;stroke-linecap:round}
+  .pfig .tx{font:500 10px var(--sans);fill:var(--ink-2)}
+  .pfig .tx.dim{fill:var(--ink-3)}
+  @media (prefers-reduced-motion:no-preference){
+    .pfig .a,.pfig .dot{animation-timing-function:ease-in-out;animation-iteration-count:infinite;animation-fill-mode:both}
+    @keyframes pf-draw-4-10{0%,4%{stroke-dashoffset:1;opacity:1}10%,94%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+    @keyframes pf-draw-16-22{0%,16%{stroke-dashoffset:1;opacity:1}22%,94%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+    @keyframes pf-draw-28-34{0%,28%{stroke-dashoffset:1;opacity:1}34%,94%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+    @keyframes pf-draw-40-46{0%,40%{stroke-dashoffset:1;opacity:1}46%,94%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+    @keyframes pf-draw-40-70{0%,40%{stroke-dashoffset:1;opacity:1}70%,94%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+    @keyframes pf-draw-52-58{0%,52%{stroke-dashoffset:1;opacity:1}58%,94%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+    @keyframes pf-draw-64-70{0%,64%{stroke-dashoffset:1;opacity:1}70%,94%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+    @keyframes pf-flow{0%{transform:translateX(0);opacity:0}8%{opacity:1}84%{opacity:1}96%,100%{transform:translateX(100px);opacity:0}}
+    @keyframes pf-handoff{0%,50%{transform:translate(140px,66px);opacity:0}54%{transform:translate(140px,66px);opacity:1}72%{transform:translate(180px,66px);opacity:1}76%,100%{transform:translate(180px,66px);opacity:0}}
+    @keyframes pf-link{0%,30%{opacity:1}40%,80%{opacity:.12}90%,100%{opacity:1}}
+    @keyframes pf-on-4{0%,4%{opacity:0}8%,94%{opacity:1}100%{opacity:0}}
+    @keyframes pf-on-10{0%,10%{opacity:0}14%,94%{opacity:1}100%{opacity:0}}
+    @keyframes pf-on-13{0%,13%{opacity:0}17%,94%{opacity:1}100%{opacity:0}}
+    @keyframes pf-on-17{0%,17%{opacity:0}21%,94%{opacity:1}100%{opacity:0}}
+    @keyframes pf-on-22{0%,22%{opacity:0}26%,94%{opacity:1}100%{opacity:0}}
+    @keyframes pf-on-24{0%,24%{opacity:0}28%,94%{opacity:1}100%{opacity:0}}
+    @keyframes pf-on-25{0%,25%{opacity:0}29%,94%{opacity:1}100%{opacity:0}}
+    @keyframes pf-on-30{0%,30%{opacity:0}34%,94%{opacity:1}100%{opacity:0}}
+    @keyframes pf-on-31{0%,31%{opacity:0}35%,94%{opacity:1}100%{opacity:0}}
+    @keyframes pf-on-34{0%,34%{opacity:0}38%,94%{opacity:1}100%{opacity:0}}
+    @keyframes pf-on-35{0%,35%{opacity:0}39%,94%{opacity:1}100%{opacity:0}}
+    @keyframes pf-on-46{0%,46%{opacity:0}50%,94%{opacity:1}100%{opacity:0}}
+    @keyframes pf-on-47{0%,47%{opacity:0}51%,94%{opacity:1}100%{opacity:0}}
+    @keyframes pf-on-48{0%,48%{opacity:0}52%,94%{opacity:1}100%{opacity:0}}
+    @keyframes pf-on-50{0%,50%{opacity:0}54%,94%{opacity:1}100%{opacity:0}}
+    @keyframes pf-on-53{0%,53%{opacity:0}57%,94%{opacity:1}100%{opacity:0}}
+    @keyframes pf-on-54{0%,54%{opacity:0}58%,94%{opacity:1}100%{opacity:0}}
+    @keyframes pf-on-58{0%,58%{opacity:0}62%,94%{opacity:1}100%{opacity:0}}
+    @keyframes pf-on-59{0%,59%{opacity:0}63%,94%{opacity:1}100%{opacity:0}}
+    @keyframes pf-on-60{0%,60%{opacity:0}64%,94%{opacity:1}100%{opacity:0}}
+    @keyframes pf-on-62{0%,62%{opacity:0}66%,94%{opacity:1}100%{opacity:0}}
+    @keyframes pf-on-70{0%,70%{opacity:0}74%,94%{opacity:1}100%{opacity:0}}
+    @keyframes pf-on-72{0%,72%{opacity:0}76%,94%{opacity:1}100%{opacity:0}}
+    @keyframes pf-pop-24{0%,24%{transform:scale(.3);opacity:0}25%{opacity:.8}38%,100%{transform:scale(1);opacity:0}}
+    @keyframes pf-pop-25{0%,25%{transform:scale(.3);opacity:0}26%{opacity:.8}39%,100%{transform:scale(1);opacity:0}}
+    @keyframes pf-pop-31{0%,31%{transform:scale(.3);opacity:0}32%{opacity:.8}45%,100%{transform:scale(1);opacity:0}}
+    @keyframes pf-pop-35{0%,35%{transform:scale(.3);opacity:0}36%{opacity:.8}49%,100%{transform:scale(1);opacity:0}}
+    @keyframes pf-pop-46{0%,46%{transform:scale(.3);opacity:0}47%{opacity:.8}60%,100%{transform:scale(1);opacity:0}}
+    @keyframes pf-pop-47{0%,47%{transform:scale(.3);opacity:0}48%{opacity:.8}61%,100%{transform:scale(1);opacity:0}}
+    @keyframes pf-pop-48{0%,48%{transform:scale(.3);opacity:0}49%{opacity:.8}62%,100%{transform:scale(1);opacity:0}}
+    @keyframes pf-pop-50{0%,50%{transform:scale(.3);opacity:0}51%{opacity:.8}64%,100%{transform:scale(1);opacity:0}}
+    @keyframes pf-pop-53{0%,53%{transform:scale(.3);opacity:0}54%{opacity:.8}67%,100%{transform:scale(1);opacity:0}}
+    @keyframes pf-pop-54{0%,54%{transform:scale(.3);opacity:0}55%{opacity:.8}68%,100%{transform:scale(1);opacity:0}}
+    @keyframes pf-pop-59{0%,59%{transform:scale(.3);opacity:0}60%{opacity:.8}73%,100%{transform:scale(1);opacity:0}}
+    @keyframes pf-pop-60{0%,60%{transform:scale(.3);opacity:0}61%{opacity:.8}74%,100%{transform:scale(1);opacity:0}}
+    @keyframes pf-pop-62{0%,62%{transform:scale(.3);opacity:0}63%{opacity:.8}76%,100%{transform:scale(1);opacity:0}}
+    @keyframes pf-pop-70{0%,70%{transform:scale(.3);opacity:0}71%{opacity:.8}84%,100%{transform:scale(1);opacity:0}}
+    @keyframes pf-pulse{0%,100%{transform:scale(1)}40%{transform:scale(1.07)}}
+    @keyframes pf-ripple{0%,4%{transform:scale(.1);opacity:0}6%{opacity:.7}64%{transform:scale(1);opacity:.2}70%,100%{transform:scale(1);opacity:0}}
+    @keyframes pf-rise{0%{transform:translateY(0);opacity:0}20%{opacity:1}100%{transform:translateY(-20px);opacity:0}}
+    @keyframes pf-spin{to{transform:rotate(360deg)}}
+    @keyframes pf-xon{0%,32%{opacity:0}40%,80%{opacity:1}88%,100%{opacity:0}}
+  }
+  @media (prefers-reduced-motion:reduce){.pfig circle.dot[style],.pfig .ripple,.pfig .scan,.pfig .flow{display:none}.pfig .still{display:inline}}
+
+  figure{margin:0}
+
+  footer{padding-block:36px 44px;color:var(--ink-3);font-size:.84rem}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px}
+  footer a{color:var(--ink-2)}
+
+  @media (max-width:860px){
+    .hero .wrap{grid-template-columns:minmax(0,1fr);gap:18px}
+    /* phones: the mark runs edge to edge, with the rings bleeding off both sides */
+    .hero-art{order:-1;width:min(100vw,540px);margin-left:calc(50% - min(50vw,270px))}
+    .hero-mark{max-width:none}
+    .hero{padding-block:6px 56px}
+    .band .wrap{grid-template-columns:minmax(0,1fr);gap:12px}
+    .tool{grid-template-columns:minmax(0,1fr)}
+    section.band{padding-block:56px}
+  }
+  @media (max-width:1040px){
+    .five li{grid-template-columns:44px minmax(0,1fr);align-items:start}
+    .pfig{grid-column:2;width:min(100%,340px)}
+  }
+  @media (max-width:380px){header.top nav a[href*="github.com"]{display:none}}
+  @media (max-width:560px){
+    .wrap{padding-inline:16px}
+    header nav{gap:14px}
+    .contact{grid-template-columns:minmax(0,1fr)}
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><svg class="pk" viewBox="0 0 64 64" aria-hidden="true"><path d="M32.00 5.00L54.67 15.92Q55.65 26.26 46.98 34.75L41.93 22.75Q40.69 10.69 32.00 5.00Z" fill="var(--ink)" stroke="var(--bg)" stroke-width="2.2" stroke-linejoin="round"/><path d="M54.67 15.92L60.27 40.45Q52.79 47.66 40.76 46.18L46.98 34.75Q55.65 26.26 54.67 15.92Z" fill="var(--ink)" stroke="var(--bg)" stroke-width="2.2" stroke-linejoin="round"/><path d="M60.27 40.45L44.58 60.13Q34.28 58.77 27.94 48.44L40.76 46.18Q52.79 47.66 60.27 40.45Z" fill="var(--ink)" stroke="var(--bg)" stroke-width="2.2" stroke-linejoin="round"/><path d="M44.58 60.13L19.42 60.13Q14.05 51.23 18.18 39.83L27.94 48.44Q34.28 58.77 44.58 60.13Z" fill="var(--ink)" stroke="var(--bg)" stroke-width="2.2" stroke-linejoin="round"/><path d="M19.42 60.13L3.73 40.45Q7.34 30.71 18.83 26.83L18.18 39.83Q14.05 51.23 19.42 60.13Z" fill="var(--ink)" stroke="var(--bg)" stroke-width="2.2" stroke-linejoin="round"/><path d="M3.73 40.45L9.33 15.92Q19.19 12.67 29.40 19.23L18.83 26.83Q7.34 30.71 3.73 40.45Z" fill="var(--ink)" stroke="var(--bg)" stroke-width="2.2" stroke-linejoin="round"/><path d="M9.33 15.92L32.00 5.00Q40.69 10.69 41.93 22.75L29.40 19.23Q19.19 12.67 9.33 15.92Z" fill="var(--ink)" stroke="var(--bg)" stroke-width="2.2" stroke-linejoin="round"/><path d="M54.67 15.92L41.93 22.75" fill="none" stroke="var(--bg)" stroke-width="1.1"/><path d="M60.27 40.45L46.98 34.75" fill="none" stroke="var(--bg)" stroke-width="1.1"/><path d="M44.58 60.13L40.76 46.18" fill="none" stroke="var(--bg)" stroke-width="1.1"/><path d="M19.42 60.13L27.94 48.44" fill="none" stroke="var(--bg)" stroke-width="1.1"/><path d="M3.73 40.45L18.18 39.83" fill="none" stroke="var(--bg)" stroke-width="1.1"/><path d="M9.33 15.92L18.83 26.83" fill="none" stroke="var(--bg)" stroke-width="1.1"/><path d="M32.00 5.00L29.40 19.23" fill="none" stroke="var(--bg)" stroke-width="1.1"/><path d="M32.00 5.00L54.67 15.92Q55.65 26.26 46.98 34.75L41.93 22.75Q40.69 10.69 32.00 5.00Z" fill="none" stroke="var(--bg)" stroke-width="2.2" stroke-linejoin="round"/><path d="M54.67 15.92L60.27 40.45Q52.79 47.66 40.76 46.18L46.98 34.75Q55.65 26.26 54.67 15.92Z" fill="none" stroke="var(--bg)" stroke-width="2.2" stroke-linejoin="round"/><path d="M60.27 40.45L44.58 60.13Q34.28 58.77 27.94 48.44L40.76 46.18Q52.79 47.66 60.27 40.45Z" fill="none" stroke="var(--bg)" stroke-width="2.2" stroke-linejoin="round"/><path d="M44.58 60.13L19.42 60.13Q14.05 51.23 18.18 39.83L27.94 48.44Q34.28 58.77 44.58 60.13Z" fill="none" stroke="var(--bg)" stroke-width="2.2" stroke-linejoin="round"/><path d="M19.42 60.13L3.73 40.45Q7.34 30.71 18.83 26.83L18.18 39.83Q14.05 51.23 19.42 60.13Z" fill="none" stroke="var(--bg)" stroke-width="2.2" stroke-linejoin="round"/><path d="M3.73 40.45L9.33 15.92Q19.19 12.67 29.40 19.23L18.83 26.83Q7.34 30.71 3.73 40.45Z" fill="none" stroke="var(--bg)" stroke-width="2.2" stroke-linejoin="round"/><path d="M9.33 15.92L32.00 5.00Q40.69 10.69 41.93 22.75L29.40 19.23Q19.19 12.67 9.33 15.92Z" fill="none" stroke="var(--bg)" stroke-width="2.2" stroke-linejoin="round"/><path d="M39.28 25.75L42.99 34.55L32 34Z" fill="var(--accent)" stroke="var(--bg)" stroke-width="1.2" stroke-linejoin="round"/><path d="M42.99 34.55L38.42 42.93L32 34Z" fill="var(--accent)" stroke="var(--bg)" stroke-width="1.2" stroke-linejoin="round"/><path d="M38.42 42.93L29.02 44.59L32 34Z" fill="var(--accent)" stroke="var(--bg)" stroke-width="1.2" stroke-linejoin="round"/><path d="M29.02 44.59L21.86 38.27L32 34Z" fill="var(--accent)" stroke="var(--bg)" stroke-width="1.2" stroke-linejoin="round"/><path d="M21.86 38.27L22.34 28.74L32 34Z" fill="var(--accent)" stroke="var(--bg)" stroke-width="1.2" stroke-linejoin="round"/><path d="M22.34 28.74L30.09 23.17L32 34Z" fill="var(--accent)" stroke="var(--bg)" stroke-width="1.2" stroke-linejoin="round"/><path d="M30.09 23.17L39.28 25.75L32 34Z" fill="var(--accent)" stroke="var(--bg)" stroke-width="1.2" stroke-linejoin="round"/></svg><span class="wm">Septakis</span></a>
+    <nav aria-label="Site"><a href="#vexproof">Products</a><a href="#principles">Principles</a><a href="https://github.com/septakis-io/vexproof">GitHub</a></nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="hero-bg" aria-hidden="true"><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><mask id="pk-s-m" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64"><path d="M32.00 5.00L54.67 15.92Q55.65 26.26 46.98 34.75L41.93 22.75Q40.69 10.69 32.00 5.00Z" fill="#fff"/><path d="M54.67 15.92L60.27 40.45Q52.79 47.66 40.76 46.18L46.98 34.75Q55.65 26.26 54.67 15.92Z" fill="#fff"/><path d="M60.27 40.45L44.58 60.13Q34.28 58.77 27.94 48.44L40.76 46.18Q52.79 47.66 60.27 40.45Z" fill="#fff"/><path d="M44.58 60.13L19.42 60.13Q14.05 51.23 18.18 39.83L27.94 48.44Q34.28 58.77 44.58 60.13Z" fill="#fff"/><path d="M19.42 60.13L3.73 40.45Q7.34 30.71 18.83 26.83L18.18 39.83Q14.05 51.23 19.42 60.13Z" fill="#fff"/><path d="M3.73 40.45L9.33 15.92Q19.19 12.67 29.40 19.23L18.83 26.83Q7.34 30.71 3.73 40.45Z" fill="#fff"/><path d="M9.33 15.92L32.00 5.00Q40.69 10.69 41.93 22.75L29.40 19.23Q19.19 12.67 9.33 15.92Z" fill="#fff"/><path d="M32.00 5.00L54.67 15.92Q55.65 26.26 46.98 34.75L41.93 22.75Q40.69 10.69 32.00 5.00Z" fill="none" stroke="#000" stroke-width="2.6" stroke-linejoin="round"/><path d="M54.67 15.92L60.27 40.45Q52.79 47.66 40.76 46.18L46.98 34.75Q55.65 26.26 54.67 15.92Z" fill="none" stroke="#000" stroke-width="2.6" stroke-linejoin="round"/><path d="M60.27 40.45L44.58 60.13Q34.28 58.77 27.94 48.44L40.76 46.18Q52.79 47.66 60.27 40.45Z" fill="none" stroke="#000" stroke-width="2.6" stroke-linejoin="round"/><path d="M44.58 60.13L19.42 60.13Q14.05 51.23 18.18 39.83L27.94 48.44Q34.28 58.77 44.58 60.13Z" fill="none" stroke="#000" stroke-width="2.6" stroke-linejoin="round"/><path d="M19.42 60.13L3.73 40.45Q7.34 30.71 18.83 26.83L18.18 39.83Q14.05 51.23 19.42 60.13Z" fill="none" stroke="#000" stroke-width="2.6" stroke-linejoin="round"/><path d="M3.73 40.45L9.33 15.92Q19.19 12.67 29.40 19.23L18.83 26.83Q7.34 30.71 3.73 40.45Z" fill="none" stroke="#000" stroke-width="2.6" stroke-linejoin="round"/><path d="M9.33 15.92L32.00 5.00Q40.69 10.69 41.93 22.75L29.40 19.23Q19.19 12.67 9.33 15.92Z" fill="none" stroke="#000" stroke-width="2.6" stroke-linejoin="round"/><path d="M39.28 25.75L42.99 34.55L38.42 42.93L29.02 44.59L21.86 38.27L22.34 28.74L30.09 23.17Z" fill="#fff"/></mask></defs><symbol id="pk-s" viewBox="0 0 64 64"><g mask="url(#pk-s-m)"><path d="M32.00 5.00L54.67 15.92Q55.65 26.26 46.98 34.75L41.93 22.75Q40.69 10.69 32.00 5.00Z" fill="currentColor"/><path d="M54.67 15.92L60.27 40.45Q52.79 47.66 40.76 46.18L46.98 34.75Q55.65 26.26 54.67 15.92Z" fill="currentColor"/><path d="M60.27 40.45L44.58 60.13Q34.28 58.77 27.94 48.44L40.76 46.18Q52.79 47.66 60.27 40.45Z" fill="currentColor"/><path d="M44.58 60.13L19.42 60.13Q14.05 51.23 18.18 39.83L27.94 48.44Q34.28 58.77 44.58 60.13Z" fill="currentColor"/><path d="M19.42 60.13L3.73 40.45Q7.34 30.71 18.83 26.83L18.18 39.83Q14.05 51.23 19.42 60.13Z" fill="currentColor"/><path d="M3.73 40.45L9.33 15.92Q19.19 12.67 29.40 19.23L18.83 26.83Q7.34 30.71 3.73 40.45Z" fill="currentColor"/><path d="M9.33 15.92L32.00 5.00Q40.69 10.69 41.93 22.75L29.40 19.23Q19.19 12.67 9.33 15.92Z" fill="currentColor"/><path d="M39.28 25.75L42.99 34.55L38.42 42.93L29.02 44.59L21.86 38.27L22.34 28.74L30.09 23.17Z" fill="var(--accent)"/></g></symbol></svg><i class="c c1"><svg viewBox="0 0 64 64"><use href="#pk-s"/></svg></i><i class="c c2"><svg viewBox="0 0 64 64"><use href="#pk-s"/></svg></i><i class="c c3"><svg viewBox="0 0 64 64"><use href="#pk-s"/></svg></i><i class="c c4"><svg viewBox="0 0 64 64"><use href="#pk-s"/></svg></i><i class="c c5"><svg viewBox="0 0 64 64"><use href="#pk-s"/></svg></i></div>
+    <div class="wrap">
+      <div>
+        <h1>We've got your back. <em>Seven times over.</em></h1>
+        <p class="lead">Septakis is the company behind vexproof, a command-line tool for security and compliance work. It runs in your own CI, reads what your build really produced, and writes down what it found in open formats, with the evidence attached.</p>
+        <div class="ctas"><a class="btn" href="https://vexproof.dev">Go to vexproof</a><a class="btn ghost" href="#vexproof">What it does</a></div>
+      </div>
+      <div class="hero-art"><svg class="hero-mark" viewBox="0 0 64 64" aria-hidden="true"><defs><mask id="pk-hb" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64"><path d="M32.00 5.00L54.67 15.92Q55.65 26.26 46.98 34.75L41.93 22.75Q40.69 10.69 32.00 5.00Z" fill="#fff"/><path d="M54.67 15.92L60.27 40.45Q52.79 47.66 40.76 46.18L46.98 34.75Q55.65 26.26 54.67 15.92Z" fill="#fff"/><path d="M60.27 40.45L44.58 60.13Q34.28 58.77 27.94 48.44L40.76 46.18Q52.79 47.66 60.27 40.45Z" fill="#fff"/><path d="M44.58 60.13L19.42 60.13Q14.05 51.23 18.18 39.83L27.94 48.44Q34.28 58.77 44.58 60.13Z" fill="#fff"/><path d="M19.42 60.13L3.73 40.45Q7.34 30.71 18.83 26.83L18.18 39.83Q14.05 51.23 19.42 60.13Z" fill="#fff"/><path d="M3.73 40.45L9.33 15.92Q19.19 12.67 29.40 19.23L18.83 26.83Q7.34 30.71 3.73 40.45Z" fill="#fff"/><path d="M9.33 15.92L32.00 5.00Q40.69 10.69 41.93 22.75L29.40 19.23Q19.19 12.67 9.33 15.92Z" fill="#fff"/><path d="M54.67 15.92L41.93 22.75" fill="none" stroke="#000" stroke-width="0.9"/><path d="M60.27 40.45L46.98 34.75" fill="none" stroke="#000" stroke-width="0.9"/><path d="M44.58 60.13L40.76 46.18" fill="none" stroke="#000" stroke-width="0.9"/><path d="M19.42 60.13L27.94 48.44" fill="none" stroke="#000" stroke-width="0.9"/><path d="M3.73 40.45L18.18 39.83" fill="none" stroke="#000" stroke-width="0.9"/><path d="M9.33 15.92L18.83 26.83" fill="none" stroke="#000" stroke-width="0.9"/><path d="M32.00 5.00L29.40 19.23" fill="none" stroke="#000" stroke-width="0.9"/><path d="M32.00 5.00L54.67 15.92Q55.65 26.26 46.98 34.75L41.93 22.75Q40.69 10.69 32.00 5.00Z" fill="none" stroke="#000" stroke-width="2.2" stroke-linejoin="round"/><path d="M54.67 15.92L60.27 40.45Q52.79 47.66 40.76 46.18L46.98 34.75Q55.65 26.26 54.67 15.92Z" fill="none" stroke="#000" stroke-width="2.2" stroke-linejoin="round"/><path d="M60.27 40.45L44.58 60.13Q34.28 58.77 27.94 48.44L40.76 46.18Q52.79 47.66 60.27 40.45Z" fill="none" stroke="#000" stroke-width="2.2" stroke-linejoin="round"/><path d="M44.58 60.13L19.42 60.13Q14.05 51.23 18.18 39.83L27.94 48.44Q34.28 58.77 44.58 60.13Z" fill="none" stroke="#000" stroke-width="2.2" stroke-linejoin="round"/><path d="M19.42 60.13L3.73 40.45Q7.34 30.71 18.83 26.83L18.18 39.83Q14.05 51.23 19.42 60.13Z" fill="none" stroke="#000" stroke-width="2.2" stroke-linejoin="round"/><path d="M3.73 40.45L9.33 15.92Q19.19 12.67 29.40 19.23L18.83 26.83Q7.34 30.71 3.73 40.45Z" fill="none" stroke="#000" stroke-width="2.2" stroke-linejoin="round"/><path d="M9.33 15.92L32.00 5.00Q40.69 10.69 41.93 22.75L29.40 19.23Q19.19 12.67 9.33 15.92Z" fill="none" stroke="#000" stroke-width="2.2" stroke-linejoin="round"/></mask><mask id="pk-hc" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64"><path d="M39.28 25.75L42.99 34.55L32 34Z" fill="#fff"/><path d="M42.99 34.55L38.42 42.93L32 34Z" fill="#fff"/><path d="M38.42 42.93L29.02 44.59L32 34Z" fill="#fff"/><path d="M29.02 44.59L21.86 38.27L32 34Z" fill="#fff"/><path d="M21.86 38.27L22.34 28.74L32 34Z" fill="#fff"/><path d="M22.34 28.74L30.09 23.17L32 34Z" fill="#fff"/><path d="M30.09 23.17L39.28 25.75L32 34Z" fill="#fff"/><path d="M39.28 25.75L42.99 34.55L32 34Z" fill="none" stroke="#000" stroke-width="1.1" stroke-linejoin="round"/><path d="M42.99 34.55L38.42 42.93L32 34Z" fill="none" stroke="#000" stroke-width="1.1" stroke-linejoin="round"/><path d="M38.42 42.93L29.02 44.59L32 34Z" fill="none" stroke="#000" stroke-width="1.1" stroke-linejoin="round"/><path d="M29.02 44.59L21.86 38.27L32 34Z" fill="none" stroke="#000" stroke-width="1.1" stroke-linejoin="round"/><path d="M21.86 38.27L22.34 28.74L32 34Z" fill="none" stroke="#000" stroke-width="1.1" stroke-linejoin="round"/><path d="M22.34 28.74L30.09 23.17L32 34Z" fill="none" stroke="#000" stroke-width="1.1" stroke-linejoin="round"/><path d="M30.09 23.17L39.28 25.75L32 34Z" fill="none" stroke="#000" stroke-width="1.1" stroke-linejoin="round"/></mask></defs><g class="blades"><g class="turn"><g mask="url(#pk-hb)"><path d="M32.00 5.00L54.67 15.92Q55.65 26.26 46.98 34.75L41.93 22.75Q40.69 10.69 32.00 5.00Z" fill="var(--ink)" class="f f0"/><path d="M54.67 15.92L60.27 40.45Q52.79 47.66 40.76 46.18L46.98 34.75Q55.65 26.26 54.67 15.92Z" fill="var(--ink)" class="f f1"/><path d="M60.27 40.45L44.58 60.13Q34.28 58.77 27.94 48.44L40.76 46.18Q52.79 47.66 60.27 40.45Z" fill="var(--ink)" class="f f2"/><path d="M44.58 60.13L19.42 60.13Q14.05 51.23 18.18 39.83L27.94 48.44Q34.28 58.77 44.58 60.13Z" fill="var(--ink)" class="f f3"/><path d="M19.42 60.13L3.73 40.45Q7.34 30.71 18.83 26.83L18.18 39.83Q14.05 51.23 19.42 60.13Z" fill="var(--ink)" class="f f4"/><path d="M3.73 40.45L9.33 15.92Q19.19 12.67 29.40 19.23L18.83 26.83Q7.34 30.71 3.73 40.45Z" fill="var(--ink)" class="f f5"/><path d="M9.33 15.92L32.00 5.00Q40.69 10.69 41.93 22.75L29.40 19.23Q19.19 12.67 9.33 15.92Z" fill="var(--ink)" class="f f6"/></g></g></g><g class="core"><g class="turn"><g mask="url(#pk-hc)"><path d="M39.28 25.75L42.99 34.55L32 34Z" fill="var(--accent)" class="f f7"/><path d="M42.99 34.55L38.42 42.93L32 34Z" fill="var(--accent)" class="f f7"/><path d="M38.42 42.93L29.02 44.59L32 34Z" fill="var(--accent)" class="f f7"/><path d="M29.02 44.59L21.86 38.27L32 34Z" fill="var(--accent)" class="f f7"/><path d="M21.86 38.27L22.34 28.74L32 34Z" fill="var(--accent)" class="f f7"/><path d="M22.34 28.74L30.09 23.17L32 34Z" fill="var(--accent)" class="f f7"/><path d="M30.09 23.17L39.28 25.75L32 34Z" fill="var(--accent)" class="f f7"/></g></g></g></svg></div>
+    </div>
+  </div>
+
+  <section class="band" id="vexproof">
+    <div class="wrap">
+      <div class="label">Products</div>
+      <div class="body">
+        <h2>Tools that show their work</h2>
+        <p>Every Septakis product runs where your code already lives and backs its answers with evidence you can check. vexproof is the first.</p>
+        <article class="tool">
+          <div class="tool-info">
+            <div class="tool-name"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3" fill="currentColor"/><rect x="24" y="4" width="16" height="16" rx="3" fill="currentColor"/><rect x="14" y="24" width="16" height="16" rx="3" fill="currentColor"/><rect x="34" y="24" width="16" height="16" rx="3" fill="currentColor"/><rect x="24" y="44" width="16" height="16" rx="3" fill="currentColor"/><rect x="46" y="6" width="12" height="12" rx="2.5" fill="none" stroke-width="4" stroke="var(--pk4)"/></svg>vexproof</div>
+            <p>For JavaScript teams. Proves which vulnerable npm code never ships, in your browser bundle or on your server, and writes VEX statements your scanner applies and your auditor can check.</p>
+            <ul class="facts">
+              <li><b>4 of 8</b><span>advisories on Gitea's frontend proved not shipped; the other 4 name the file that ships</span></li>
+              <li><b>MIT</b><span>open-source core, with every supported bundler and scanner</span></li>
+              <li><b>$1,200</b><span>per year for Pro, up to 500 employees; larger, let's talk. Free for open source</span></li>
+            </ul>
+            <div class="ctas"><a class="btn" href="https://vexproof.dev">Go to vexproof</a><a class="btn ghost" href="https://github.com/septakis-io/vexproof">Source</a></div>
+          </div>
+          <div class="term" role="img" aria-label="vexproof output: 8 findings, 4 not affected, 4 in triage">
+            <div><span class="dim">$ </span><span class="cmd">npx vexproof --lockfile bom.json \</span></div>
+            <div><span class="cmd">      --modules modules.json</span></div>
+            <div class="dim">8 finding(s) → 4 not_affected, 4 in_triage</div>
+            <div>&nbsp;</div>
+            <div><span class="ok">not_affected</span>  lodash-es  <span class="dim">files not bundled</span></div>
+            <div><span class="ok">not_affected</span>  form-data  <span class="dim">not bundled</span></div>
+            <div><span class="warn">in_triage   </span>  js-yaml    <span class="dim">loader.js ships</span></div>
+            <div><span class="warn">in_triage   </span>  fflate     <span class="dim">browser.js ships</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="principles">
+    <div class="wrap">
+      <div class="label">Principles</div>
+      <div class="body">
+        <h2>Seven rules Septakis works by</h2>
+        <ol class="five"><li><svg class="pk glyph" viewBox="0 0 64 64" aria-hidden="true"><path d="M32.00 5.00L54.67 15.92Q55.65 26.26 46.98 34.75L41.93 22.75Q40.69 10.69 32.00 5.00Z" fill="var(--ink)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M54.67 15.92L60.27 40.45Q52.79 47.66 40.76 46.18L46.98 34.75Q55.65 26.26 54.67 15.92Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M60.27 40.45L44.58 60.13Q34.28 58.77 27.94 48.44L40.76 46.18Q52.79 47.66 60.27 40.45Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M44.58 60.13L19.42 60.13Q14.05 51.23 18.18 39.83L27.94 48.44Q34.28 58.77 44.58 60.13Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M19.42 60.13L3.73 40.45Q7.34 30.71 18.83 26.83L18.18 39.83Q14.05 51.23 19.42 60.13Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M3.73 40.45L9.33 15.92Q19.19 12.67 29.40 19.23L18.83 26.83Q7.34 30.71 3.73 40.45Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M9.33 15.92L32.00 5.00Q40.69 10.69 41.93 22.75L29.40 19.23Q19.19 12.67 9.33 15.92Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M39.28 25.75L42.99 34.55L38.42 42.93L29.02 44.59L21.86 38.27L22.34 28.74L30.09 23.17Z" fill="var(--accent)"/></svg><div><h3>Offline friendly</h3><p>A tool you depend on shouldn’t depend on a connection. Ours run on your own machines, rely on no service of ours, and treat the network as optional.</p></div><figure class="pfig"><svg viewBox="0 0 240 132" role="img" aria-label="A shape keeps turning inside a box labelled your machine while the line to the network outside fades away and comes back."><rect class="zone" x="14" y="16" width="128" height="100" rx="12"/><text class="tx dim" x="26" y="34">your machine</text><circle class="orbit" cx="78" cy="72" r="26"/><g style="transform-origin:78px 72px;animation:pf-spin 24s linear infinite"><path class="mark" d="M78.0 59.0L88.2 63.9L90.7 74.9L83.6 83.7L72.4 83.7L65.3 74.9L67.8 63.9Z"/></g><g style="transform-origin:78px 72px;animation:pf-spin 4s linear infinite"><circle class="dot" cx="78" cy="46" r="3.5"/></g><path class="ln dash" d="M142 72H178" style="animation:pf-link 8s ease-in-out infinite"/><path class="no" d="M156.5 68.5l7 7m0 -7l-7 7" style="animation:pf-xon 8s ease-in-out infinite"/><circle class="node" cx="200" cy="72" r="18"/><ellipse class="ln" cx="200" cy="72" rx="7.5" ry="18"/><path class="ln" d="M182 72H218"/><text class="tx dim" x="200" y="108" text-anchor="middle">network</text></svg></figure></li><li><svg class="pk glyph" viewBox="0 0 64 64" aria-hidden="true"><path d="M32.00 5.00L54.67 15.92Q55.65 26.26 46.98 34.75L41.93 22.75Q40.69 10.69 32.00 5.00Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M54.67 15.92L60.27 40.45Q52.79 47.66 40.76 46.18L46.98 34.75Q55.65 26.26 54.67 15.92Z" fill="var(--ink)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M60.27 40.45L44.58 60.13Q34.28 58.77 27.94 48.44L40.76 46.18Q52.79 47.66 60.27 40.45Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M44.58 60.13L19.42 60.13Q14.05 51.23 18.18 39.83L27.94 48.44Q34.28 58.77 44.58 60.13Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M19.42 60.13L3.73 40.45Q7.34 30.71 18.83 26.83L18.18 39.83Q14.05 51.23 19.42 60.13Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M3.73 40.45L9.33 15.92Q19.19 12.67 29.40 19.23L18.83 26.83Q7.34 30.71 3.73 40.45Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M9.33 15.92L32.00 5.00Q40.69 10.69 41.93 22.75L29.40 19.23Q19.19 12.67 9.33 15.92Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M39.28 25.75L42.99 34.55L38.42 42.93L29.02 44.59L21.86 38.27L22.34 28.74L30.09 23.17Z" fill="var(--accent)"/></svg><div><h3>Wide compatibility</h3><p>The best tool is the one that fits what’s already there. We build on open standards and common ground, so nothing has to be torn down to make room for us.</p></div><figure class="pfig"><svg viewBox="0 0 240 132" role="img" aria-label="One shape in the middle reaches out, one by one, to six shapes of different kinds around it, and connects to all of them."><path class="ln draw a" pathLength="1" d="M120 66L43.8 44" style="animation-name:pf-draw-4-10;animation-duration:7s"/><path class="ln draw a" pathLength="1" d="M120 66L120 22" style="animation-name:pf-draw-16-22;animation-duration:7s"/><path class="ln draw a" pathLength="1" d="M120 66L196.2 44" style="animation-name:pf-draw-28-34;animation-duration:7s"/><path class="ln draw a" pathLength="1" d="M120 66L196.2 88" style="animation-name:pf-draw-40-46;animation-duration:7s"/><path class="ln draw a" pathLength="1" d="M120 66L120 110" style="animation-name:pf-draw-52-58;animation-duration:7s"/><path class="ln draw a" pathLength="1" d="M120 66L43.8 88" style="animation-name:pf-draw-64-70;animation-duration:7s"/><circle class="node" cx="120" cy="66" r="20"/><path class="mark" d="M120.0 53.0L130.2 57.9L132.7 68.9L125.6 77.7L114.4 77.7L107.3 68.9L109.8 57.9Z"/><circle class="node" cx="43.8" cy="44" r="9"/><g class="a" style="animation-name:pf-on-10;animation-duration:7s"><circle class="node on" cx="43.8" cy="44" r="9"/></g><rect class="node" x="112" y="14" width="16" height="16" rx="2"/><g class="a" style="animation-name:pf-on-22;animation-duration:7s"><rect class="node on" x="112" y="14" width="16" height="16" rx="2"/></g><path class="node" d="M196.2 35L205.7 51.5L186.7 51.5Z"/><g class="a" style="animation-name:pf-on-34;animation-duration:7s"><path class="node on" d="M196.2 35L205.7 51.5L186.7 51.5Z"/></g><path class="node" d="M196.2 78L206.2 88L196.2 98L186.2 88Z"/><g class="a" style="animation-name:pf-on-46;animation-duration:7s"><path class="node on" d="M196.2 78L206.2 88L196.2 98L186.2 88Z"/></g><path class="node" d="M130 110L125 118.7L115 118.7L110 110L115 101.3L125 101.3Z"/><g class="a" style="animation-name:pf-on-58;animation-duration:7s"><path class="node on" d="M130 110L125 118.7L115 118.7L110 110L115 101.3L125 101.3Z"/></g><rect class="node" x="31.8" y="81" width="24" height="14" rx="7"/><g class="a" style="animation-name:pf-on-70;animation-duration:7s"><rect class="node on" x="31.8" y="81" width="24" height="14" rx="7"/></g></svg></figure></li><li><svg class="pk glyph" viewBox="0 0 64 64" aria-hidden="true"><path d="M32.00 5.00L54.67 15.92Q55.65 26.26 46.98 34.75L41.93 22.75Q40.69 10.69 32.00 5.00Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M54.67 15.92L60.27 40.45Q52.79 47.66 40.76 46.18L46.98 34.75Q55.65 26.26 54.67 15.92Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M60.27 40.45L44.58 60.13Q34.28 58.77 27.94 48.44L40.76 46.18Q52.79 47.66 60.27 40.45Z" fill="var(--ink)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M44.58 60.13L19.42 60.13Q14.05 51.23 18.18 39.83L27.94 48.44Q34.28 58.77 44.58 60.13Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M19.42 60.13L3.73 40.45Q7.34 30.71 18.83 26.83L18.18 39.83Q14.05 51.23 19.42 60.13Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M3.73 40.45L9.33 15.92Q19.19 12.67 29.40 19.23L18.83 26.83Q7.34 30.71 3.73 40.45Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M9.33 15.92L32.00 5.00Q40.69 10.69 41.93 22.75L29.40 19.23Q19.19 12.67 9.33 15.92Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M39.28 25.75L42.99 34.55L38.42 42.93L29.02 44.59L21.86 38.27L22.34 28.74L30.09 23.17Z" fill="var(--accent)"/></svg><div><h3>Reduce toil</h3><p>Repetitive work is a job for machines; judgment is a job for people. Our tools take the first off your hands, so you have more time for the second.</p></div><figure class="pfig"><svg viewBox="0 0 240 132" role="img" aria-label="A steady stream of repetitive work flows into a shape that handles each item and ticks it off. Only the occasional decision is passed on to a person."><path class="ln" d="M4 75H108"/><rect class="mute flow" x="0" y="60" width="12" height="12" rx="2.5" style="animation:pf-flow 3.6s linear -0.0s infinite"/><rect class="mute flow" x="0" y="60" width="12" height="12" rx="2.5" style="animation:pf-flow 3.6s linear -0.6s infinite"/><rect class="mute flow" x="0" y="60" width="12" height="12" rx="2.5" style="animation:pf-flow 3.6s linear -1.2s infinite"/><rect class="mute flow" x="0" y="60" width="12" height="12" rx="2.5" style="animation:pf-flow 3.6s linear -1.8s infinite"/><rect class="mute flow" x="0" y="60" width="12" height="12" rx="2.5" style="animation:pf-flow 3.6s linear -2.4s infinite"/><rect class="mute flow" x="0" y="60" width="12" height="12" rx="2.5" style="animation:pf-flow 3.6s linear -3.0s infinite"/><rect class="mute still" x="8" y="60" width="12" height="12" rx="2.5"/><rect class="mute still" x="25" y="60" width="12" height="12" rx="2.5"/><rect class="mute still" x="42" y="60" width="12" height="12" rx="2.5"/><rect class="mute still" x="59" y="60" width="12" height="12" rx="2.5"/><rect class="mute still" x="76" y="60" width="12" height="12" rx="2.5"/><rect class="mute still" x="93" y="60" width="12" height="12" rx="2.5"/><path class="ln" d="M138 66H182"/><g style="transform-origin:124px 66px;animation:pf-pulse .6s ease-in-out infinite"><path class="mark" d="M124.0 51.0L135.7 56.6L138.6 69.3L130.5 79.5L117.5 79.5L109.4 69.3L112.3 56.6Z"/></g><path class="tick flow" d="M119 42l3.2 3.4l6.4 -7" style="animation:pf-rise 1.8s ease-out -0.0s infinite"/><path class="tick flow" d="M119 42l3.2 3.4l6.4 -7" style="animation:pf-rise 1.8s ease-out -0.6s infinite"/><path class="tick flow" d="M119 42l3.2 3.4l6.4 -7" style="animation:pf-rise 1.8s ease-out -1.2s infinite"/><path class="tick still" d="M119 40l3.2 3.4l6.4 -7"/><circle class="dot" r="4" style="animation:pf-handoff 6s ease-in-out infinite"/><circle class="dot still" cx="160" cy="66" r="4"/><circle class="person" cx="204" cy="52" r="8"/><path class="person" d="M189 82a15 13 0 0 1 30 0"/><g class="a" style="animation-name:pf-on-72;animation-duration:6s"><circle class="person on" cx="204" cy="52" r="8"/><path class="person on" d="M189 82a15 13 0 0 1 30 0"/></g><text class="tx dim" x="56" y="104" text-anchor="middle">repetitive work</text><text class="tx dim" x="204" y="104" text-anchor="middle">your call</text></svg></figure></li><li><svg class="pk glyph" viewBox="0 0 64 64" aria-hidden="true"><path d="M32.00 5.00L54.67 15.92Q55.65 26.26 46.98 34.75L41.93 22.75Q40.69 10.69 32.00 5.00Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M54.67 15.92L60.27 40.45Q52.79 47.66 40.76 46.18L46.98 34.75Q55.65 26.26 54.67 15.92Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M60.27 40.45L44.58 60.13Q34.28 58.77 27.94 48.44L40.76 46.18Q52.79 47.66 60.27 40.45Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M44.58 60.13L19.42 60.13Q14.05 51.23 18.18 39.83L27.94 48.44Q34.28 58.77 44.58 60.13Z" fill="var(--ink)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M19.42 60.13L3.73 40.45Q7.34 30.71 18.83 26.83L18.18 39.83Q14.05 51.23 19.42 60.13Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M3.73 40.45L9.33 15.92Q19.19 12.67 29.40 19.23L18.83 26.83Q7.34 30.71 3.73 40.45Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M9.33 15.92L32.00 5.00Q40.69 10.69 41.93 22.75L29.40 19.23Q19.19 12.67 9.33 15.92Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M39.28 25.75L42.99 34.55L38.42 42.93L29.02 44.59L21.86 38.27L22.34 28.74L30.09 23.17Z" fill="var(--accent)"/></svg><div><h3>Test everything</h3><p>Dependable software comes from testing. Every release we make is tested against real-world projects before it ships, so it does what you expect when you rely on it.</p></div><figure class="pfig"><svg viewBox="0 0 240 132" role="img" aria-label="Points spread outward until they cover the whole top layer of a stack. Then a line drops straight down through every layer beneath, and each one lights up as it is reached."><path class="slab" d="M48 98L120 80L192 98L120 116Z"/><g class="a" style="animation-name:pf-on-70;animation-duration:7s"><path class="slab on" d="M48 98L120 80L192 98L120 116Z"/></g><path class="slab" d="M48 76L120 58L192 76L120 94Z"/><g class="a" style="animation-name:pf-on-60;animation-duration:7s"><path class="slab on" d="M48 76L120 58L192 76L120 94Z"/></g><path class="slab" d="M48 54L120 36L192 54L120 72Z"/><g class="a" style="animation-name:pf-on-50;animation-duration:7s"><path class="slab on" d="M48 54L120 36L192 54L120 72Z"/></g><path class="slab" d="M48 32L120 14L192 32L120 50Z"/><g class="a" style="animation-name:pf-on-34;animation-duration:7s"><path class="slab on" d="M48 32L120 14L192 32L120 50Z"/></g><circle class="mark a" cx="120" cy="17.6" r="2.4" style="animation-name:pf-on-30;animation-duration:7s"/><circle class="mark a" cx="105.6" cy="21.2" r="2.4" style="animation-name:pf-on-25;animation-duration:7s"/><circle class="mark a" cx="91.2" cy="24.8" r="2.4" style="animation-name:pf-on-22;animation-duration:7s"/><circle class="mark a" cx="76.8" cy="28.4" r="2.4" style="animation-name:pf-on-25;animation-duration:7s"/><circle class="mark a" cx="62.4" cy="32" r="2.4" style="animation-name:pf-on-30;animation-duration:7s"/><circle class="mark a" cx="134.4" cy="21.2" r="2.4" style="animation-name:pf-on-25;animation-duration:7s"/><circle class="mark a" cx="120" cy="24.8" r="2.4" style="animation-name:pf-on-17;animation-duration:7s"/><circle class="mark a" cx="105.6" cy="28.4" r="2.4" style="animation-name:pf-on-13;animation-duration:7s"/><circle class="mark a" cx="91.2" cy="32" r="2.4" style="animation-name:pf-on-17;animation-duration:7s"/><circle class="mark a" cx="76.8" cy="35.6" r="2.4" style="animation-name:pf-on-25;animation-duration:7s"/><circle class="mark a" cx="148.8" cy="24.8" r="2.4" style="animation-name:pf-on-22;animation-duration:7s"/><circle class="mark a" cx="134.4" cy="28.4" r="2.4" style="animation-name:pf-on-13;animation-duration:7s"/><circle class="mark a" cx="120" cy="32" r="2.4" style="animation-name:pf-on-4;animation-duration:7s"/><circle class="mark a" cx="105.6" cy="35.6" r="2.4" style="animation-name:pf-on-13;animation-duration:7s"/><circle class="mark a" cx="91.2" cy="39.2" r="2.4" style="animation-name:pf-on-22;animation-duration:7s"/><circle class="mark a" cx="163.2" cy="28.4" r="2.4" style="animation-name:pf-on-25;animation-duration:7s"/><circle class="mark a" cx="148.8" cy="32" r="2.4" style="animation-name:pf-on-17;animation-duration:7s"/><circle class="mark a" cx="134.4" cy="35.6" r="2.4" style="animation-name:pf-on-13;animation-duration:7s"/><circle class="mark a" cx="120" cy="39.2" r="2.4" style="animation-name:pf-on-17;animation-duration:7s"/><circle class="mark a" cx="105.6" cy="42.8" r="2.4" style="animation-name:pf-on-25;animation-duration:7s"/><circle class="mark a" cx="177.6" cy="32" r="2.4" style="animation-name:pf-on-30;animation-duration:7s"/><circle class="mark a" cx="163.2" cy="35.6" r="2.4" style="animation-name:pf-on-25;animation-duration:7s"/><circle class="mark a" cx="148.8" cy="39.2" r="2.4" style="animation-name:pf-on-22;animation-duration:7s"/><circle class="mark a" cx="134.4" cy="42.8" r="2.4" style="animation-name:pf-on-25;animation-duration:7s"/><circle class="mark a" cx="120" cy="46.4" r="2.4" style="animation-name:pf-on-30;animation-duration:7s"/><path class="ln beam draw a" pathLength="1" d="M120 32V98" style="animation-name:pf-draw-40-70;animation-duration:7s"/><ellipse class="ripple" cx="120" cy="54" rx="30" ry="8" style="transform-origin:120px 54px;animation:pf-pop-50 7s ease-out infinite"/><ellipse class="ripple" cx="120" cy="76" rx="30" ry="8" style="transform-origin:120px 76px;animation:pf-pop-60 7s ease-out infinite"/><ellipse class="ripple" cx="120" cy="98" rx="30" ry="8" style="transform-origin:120px 98px;animation:pf-pop-70 7s ease-out infinite"/><g class="a" style="animation-name:pf-on-70;animation-duration:7s"><circle class="mark" cx="120" cy="98" r="3.2"/></g></svg></figure></li><li><svg class="pk glyph" viewBox="0 0 64 64" aria-hidden="true"><path d="M32.00 5.00L54.67 15.92Q55.65 26.26 46.98 34.75L41.93 22.75Q40.69 10.69 32.00 5.00Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M54.67 15.92L60.27 40.45Q52.79 47.66 40.76 46.18L46.98 34.75Q55.65 26.26 54.67 15.92Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M60.27 40.45L44.58 60.13Q34.28 58.77 27.94 48.44L40.76 46.18Q52.79 47.66 60.27 40.45Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M44.58 60.13L19.42 60.13Q14.05 51.23 18.18 39.83L27.94 48.44Q34.28 58.77 44.58 60.13Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M19.42 60.13L3.73 40.45Q7.34 30.71 18.83 26.83L18.18 39.83Q14.05 51.23 19.42 60.13Z" fill="var(--ink)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M3.73 40.45L9.33 15.92Q19.19 12.67 29.40 19.23L18.83 26.83Q7.34 30.71 3.73 40.45Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M9.33 15.92L32.00 5.00Q40.69 10.69 41.93 22.75L29.40 19.23Q19.19 12.67 9.33 15.92Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M39.28 25.75L42.99 34.55L38.42 42.93L29.02 44.59L21.86 38.27L22.34 28.74L30.09 23.17Z" fill="var(--accent)"/></svg><div><h3>Built to last</h3><p>Tools become part of how you work. We change ours carefully, keep existing setups working, and never break what you rely on without warning.</p></div><figure class="pfig"><svg viewBox="0 0 240 132" role="img" aria-label="A setup on the left stays connected as four releases arrive one after another, and each one is ticked as the link reaches it."><rect class="node" x="14" y="46" width="58" height="40" rx="6"/><path class="ln" d="M23 59H58M23 66H50M23 73H54"/><text class="tx dim" x="43" y="104" text-anchor="middle">your setup</text><path class="ln" d="M72 66H211"/><path class="ln beam draw a" pathLength="1" d="M72 66H91" style="animation-name:pf-draw-4-10;animation-duration:7s"/><path class="ln beam draw a" pathLength="1" d="M109 66H131" style="animation-name:pf-draw-16-22;animation-duration:7s"/><path class="ln beam draw a" pathLength="1" d="M149 66H171" style="animation-name:pf-draw-28-34;animation-duration:7s"/><path class="ln beam draw a" pathLength="1" d="M189 66H211" style="animation-name:pf-draw-40-46;animation-duration:7s"/><circle class="node" cx="100" cy="66" r="9"/><g class="a" style="animation-name:pf-on-10;animation-duration:7s"><circle class="node on" cx="100" cy="66" r="9"/><path class="tick" d="M96 66l3 3l5.5 -6"/></g><text class="tx dim" x="100" y="46" text-anchor="middle">v1</text><circle class="node" cx="140" cy="66" r="9"/><g class="a" style="animation-name:pf-on-22;animation-duration:7s"><circle class="node on" cx="140" cy="66" r="9"/><path class="tick" d="M136 66l3 3l5.5 -6"/></g><text class="tx dim" x="140" y="46" text-anchor="middle">v2</text><circle class="node" cx="180" cy="66" r="9"/><g class="a" style="animation-name:pf-on-34;animation-duration:7s"><circle class="node on" cx="180" cy="66" r="9"/><path class="tick" d="M176 66l3 3l5.5 -6"/></g><text class="tx dim" x="180" y="46" text-anchor="middle">v3</text><circle class="node" cx="220" cy="66" r="9"/><g class="a" style="animation-name:pf-on-46;animation-duration:7s"><circle class="node on" cx="220" cy="66" r="9"/><path class="tick" d="M216 66l3 3l5.5 -6"/></g><text class="tx dim" x="220" y="46" text-anchor="middle">v4</text></svg></figure></li><li><svg class="pk glyph" viewBox="0 0 64 64" aria-hidden="true"><path d="M32.00 5.00L54.67 15.92Q55.65 26.26 46.98 34.75L41.93 22.75Q40.69 10.69 32.00 5.00Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M54.67 15.92L60.27 40.45Q52.79 47.66 40.76 46.18L46.98 34.75Q55.65 26.26 54.67 15.92Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M60.27 40.45L44.58 60.13Q34.28 58.77 27.94 48.44L40.76 46.18Q52.79 47.66 60.27 40.45Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M44.58 60.13L19.42 60.13Q14.05 51.23 18.18 39.83L27.94 48.44Q34.28 58.77 44.58 60.13Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M19.42 60.13L3.73 40.45Q7.34 30.71 18.83 26.83L18.18 39.83Q14.05 51.23 19.42 60.13Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M3.73 40.45L9.33 15.92Q19.19 12.67 29.40 19.23L18.83 26.83Q7.34 30.71 3.73 40.45Z" fill="var(--ink)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M9.33 15.92L32.00 5.00Q40.69 10.69 41.93 22.75L29.40 19.23Q19.19 12.67 9.33 15.92Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M39.28 25.75L42.99 34.55L38.42 42.93L29.02 44.59L21.86 38.27L22.34 28.74L30.09 23.17Z" fill="var(--accent)"/></svg><div><h3>Listen and respond</h3><p>The people who use our tools shape what they become. We read every report, answer quickly, and show what changed because of what you told us.</p></div><figure class="pfig"><svg viewBox="0 0 240 132" role="img" aria-label="A person sends a note to the shape in the middle, which answers back. Then a new piece appears in the next release."><circle class="person" cx="36" cy="56" r="8"/><path class="person" d="M21 86a15 13 0 0 1 30 0"/><text class="tx dim" x="36" y="108" text-anchor="middle">you</text><g class="a" style="animation-name:pf-on-4;animation-duration:7s"><rect class="node on" x="58" y="26" width="40" height="18" rx="9"/><circle class="mute" cx="70" cy="35" r="1.8"/><circle class="mute" cx="78" cy="35" r="1.8"/><circle class="mute" cx="86" cy="35" r="1.8"/></g><path class="ln draw a" pathLength="1" d="M56 60H101" style="animation-name:pf-draw-16-22;animation-duration:7s"/><circle class="node" cx="120" cy="66" r="20"/><path class="mark" d="M120.0 54.0L129.4 58.5L131.7 68.7L125.2 76.8L114.8 76.8L108.3 68.7L110.6 58.5Z"/><path class="ln beam draw a" pathLength="1" d="M101 72H56" style="animation-name:pf-draw-28-34;animation-duration:7s"/><g class="a" style="animation-name:pf-on-34;animation-duration:7s"><rect class="node on" x="58" y="86" width="40" height="18" rx="9"/><path class="tick" d="M72 95l4 4l8 -8"/></g><path class="ln draw a" pathLength="1" d="M140 66H164" style="animation-name:pf-draw-40-46;animation-duration:7s"/><rect class="node" x="164" y="34" width="60" height="62" rx="6"/><path class="ln" d="M174 48H212M174 56H204"/><g class="a" style="animation-name:pf-on-46;animation-duration:7s"><rect class="node on" x="174" y="68" width="40" height="16" rx="3"/></g><text class="tx dim" x="194" y="112" text-anchor="middle">next release</text></svg></figure></li><li><svg class="pk glyph" viewBox="0 0 64 64" aria-hidden="true"><path d="M32.00 5.00L54.67 15.92Q55.65 26.26 46.98 34.75L41.93 22.75Q40.69 10.69 32.00 5.00Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M54.67 15.92L60.27 40.45Q52.79 47.66 40.76 46.18L46.98 34.75Q55.65 26.26 54.67 15.92Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M60.27 40.45L44.58 60.13Q34.28 58.77 27.94 48.44L40.76 46.18Q52.79 47.66 60.27 40.45Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M44.58 60.13L19.42 60.13Q14.05 51.23 18.18 39.83L27.94 48.44Q34.28 58.77 44.58 60.13Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M19.42 60.13L3.73 40.45Q7.34 30.71 18.83 26.83L18.18 39.83Q14.05 51.23 19.42 60.13Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M3.73 40.45L9.33 15.92Q19.19 12.67 29.40 19.23L18.83 26.83Q7.34 30.71 3.73 40.45Z" fill="var(--rule-2)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M9.33 15.92L32.00 5.00Q40.69 10.69 41.93 22.75L29.40 19.23Q19.19 12.67 9.33 15.92Z" fill="var(--ink)" stroke="var(--bg)" stroke-width="2.6" stroke-linejoin="round"/><path d="M39.28 25.75L42.99 34.55L38.42 42.93L29.02 44.59L21.86 38.27L22.34 28.74L30.09 23.17Z" fill="var(--accent)"/></svg><div><h3>Make the world a safer place</h3><p>Safer software is good for everyone. We keep the foundations open, make the rest free for those who build in the open, and share what we learn.</p></div><figure class="pfig"><svg viewBox="0 0 240 132" role="img" aria-label="A ring spreads outward from a shape at the centre, and each point around it lights up as the ring reaches it."><circle class="ripple" cx="120" cy="66" r="110" style="transform-origin:120px 66px;animation:pf-ripple 7s ease-out infinite"/><circle class="orbit" cx="120" cy="66" r="20"/><path class="mark" d="M120.0 54.0L129.4 58.5L131.7 68.7L125.2 76.8L114.8 76.8L108.3 68.7L110.6 58.5Z"/><circle class="ripple" cx="84" cy="40" r="15" style="transform-origin:84px 40px;animation:pf-pop-24 7s ease-out infinite"/><circle class="node" cx="84" cy="40" r="4.5"/><g class="a" style="animation-name:pf-on-24;animation-duration:7s"><circle class="node lit" cx="84" cy="40" r="4.5"/></g><circle class="ripple" cx="160" cy="44" r="15" style="transform-origin:160px 44px;animation:pf-pop-25 7s ease-out infinite"/><circle class="node" cx="160" cy="44" r="4.5"/><g class="a" style="animation-name:pf-on-25;animation-duration:7s"><circle class="node lit" cx="160" cy="44" r="4.5"/></g><circle class="ripple" cx="70" cy="90" r="15" style="transform-origin:70px 90px;animation:pf-pop-31 7s ease-out infinite"/><circle class="node" cx="70" cy="90" r="4.5"/><g class="a" style="animation-name:pf-on-31;animation-duration:7s"><circle class="node lit" cx="70" cy="90" r="4.5"/></g><circle class="ripple" cx="176" cy="94" r="15" style="transform-origin:176px 94px;animation:pf-pop-35 7s ease-out infinite"/><circle class="node" cx="176" cy="94" r="4.5"/><g class="a" style="animation-name:pf-on-35;animation-duration:7s"><circle class="node lit" cx="176" cy="94" r="4.5"/></g><circle class="ripple" cx="120" cy="22" r="15" style="transform-origin:120px 22px;animation:pf-pop-24 7s ease-out infinite"/><circle class="node" cx="120" cy="22" r="4.5"/><g class="a" style="animation-name:pf-on-24;animation-duration:7s"><circle class="node lit" cx="120" cy="22" r="4.5"/></g><circle class="ripple" cx="120" cy="112" r="15" style="transform-origin:120px 112px;animation:pf-pop-25 7s ease-out infinite"/><circle class="node" cx="120" cy="112" r="4.5"/><g class="a" style="animation-name:pf-on-25;animation-duration:7s"><circle class="node lit" cx="120" cy="112" r="4.5"/></g><circle class="ripple" cx="40" cy="60" r="15" style="transform-origin:40px 60px;animation:pf-pop-46 7s ease-out infinite"/><circle class="node" cx="40" cy="60" r="4.5"/><g class="a" style="animation-name:pf-on-46;animation-duration:7s"><circle class="node lit" cx="40" cy="60" r="4.5"/></g><circle class="ripple" cx="200" cy="70" r="15" style="transform-origin:200px 70px;animation:pf-pop-46 7s ease-out infinite"/><circle class="node" cx="200" cy="70" r="4.5"/><g class="a" style="animation-name:pf-on-46;animation-duration:7s"><circle class="node lit" cx="200" cy="70" r="4.5"/></g><circle class="ripple" cx="36" cy="104" r="15" style="transform-origin:36px 104px;animation:pf-pop-53 7s ease-out infinite"/><circle class="node" cx="36" cy="104" r="4.5"/><g class="a" style="animation-name:pf-on-53;animation-duration:7s"><circle class="node lit" cx="36" cy="104" r="4.5"/></g><circle class="ripple" cx="206" cy="28" r="15" style="transform-origin:206px 28px;animation:pf-pop-54 7s ease-out infinite"/><circle class="node" cx="206" cy="28" r="4.5"/><g class="a" style="animation-name:pf-on-54;animation-duration:7s"><circle class="node lit" cx="206" cy="28" r="4.5"/></g><circle class="ripple" cx="56" cy="16" r="15" style="transform-origin:56px 16px;animation:pf-pop-47 7s ease-out infinite"/><circle class="node" cx="56" cy="16" r="4.5"/><g class="a" style="animation-name:pf-on-47;animation-duration:7s"><circle class="node lit" cx="56" cy="16" r="4.5"/></g><circle class="ripple" cx="186" cy="116" r="15" style="transform-origin:186px 116px;animation:pf-pop-48 7s ease-out infinite"/><circle class="node" cx="186" cy="116" r="4.5"/><g class="a" style="animation-name:pf-on-48;animation-duration:7s"><circle class="node lit" cx="186" cy="116" r="4.5"/></g><circle class="ripple" cx="22" cy="40" r="15" style="transform-origin:22px 40px;animation:pf-pop-59 7s ease-out infinite"/><circle class="node" cx="22" cy="40" r="4.5"/><g class="a" style="animation-name:pf-on-59;animation-duration:7s"><circle class="node lit" cx="22" cy="40" r="4.5"/></g><circle class="ripple" cx="220" cy="104" r="15" style="transform-origin:220px 104px;animation:pf-pop-62 7s ease-out infinite"/><circle class="node" cx="220" cy="104" r="4.5"/><g class="a" style="animation-name:pf-on-62;animation-duration:7s"><circle class="node lit" cx="220" cy="104" r="4.5"/></g></svg></figure></li></ol>
+        <p class="next">vexproof is built to all seven. Anything we make after it will be too.</p>
+      </div>
+    </div>
+  </section>
+  <section class="band" id="about">
+    <div class="wrap">
+      <div class="label">About</div>
+      <div class="body">
+        <h2>Making software easier to trust</h2>
+        <p>Septakis is a software company based in Chicago. We make developer tools that prove what software actually ships.</p>
+        <p>We start with focused tools that each do one job well, and build them to work together as the set grows.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="contact">
+    <div class="wrap">
+      <div class="label">Contact</div>
+      <div class="body">
+        <h2>Get in touch</h2>
+        <dl class="contact">
+          <div><dt>Email</dt><dd><a href="mailto:hello@septakis.io">hello@septakis.io</a></dd></div>
+          <div><dt>vexproof questions and bugs</dt><dd><a href="https://github.com/septakis-io/vexproof/issues">Open an issue on GitHub</a></dd></div>
+          <div><dt>Free Pro for open source</dt><dd><a href="https://github.com/septakis-io/vexproof/issues/new?title=Open-source%20license%20request&amp;body=Repositories%3A%20">Request a license</a></dd></div>
+          <div><dt>Security issues</dt><dd>Email us rather than opening a public issue.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Septakis</span><span><a href="https://vexproof.dev">vexproof.dev</a> · <a href="https://github.com/septakis-io/vexproof">GitHub</a></span></div>
+</footer>
+
+<script>
+// Hero: the layers shift a little with the pointer, by depth. The spinning itself is plain CSS and never stops.
+(() => {
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+  let raf = 0, mx = 0, my = 0, tx = 0, ty = 0;
+  const frame = () => {
+    raf = 0; mx += (tx - mx) * 0.08; my += (ty - my) * 0.08;
+    hero.style.setProperty('--mx', mx.toFixed(3)); hero.style.setProperty('--my', my.toFixed(3));
+    if (Math.abs(tx - mx) > 0.002 || Math.abs(ty - my) > 0.002) raf = requestAnimationFrame(frame);
+  };
+  const kick = () => { if (!raf && !reduce.matches) raf = requestAnimationFrame(frame); };
+  hero.addEventListener('pointermove', (e) => {
+    if (e.pointerType === 'touch') return;
+    const r = hero.getBoundingClientRect();
+    tx = (e.clientX - r.left) / r.width * 2 - 1; ty = (e.clientY - r.top) / r.height * 2 - 1; kick();
+  });
+  hero.addEventListener('pointerleave', () => { tx = ty = 0; kick(); });
+  reduce.addEventListener('change', () => { tx = ty = mx = my = 0; hero.style.setProperty('--mx', '0'); hero.style.setProperty('--my', '0'); });
+})();
+</script>
+
+</body>
+</html>
